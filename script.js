@@ -2,13 +2,18 @@ function aba(){
     alert("ABA NÃO ENCONTRADA!")
 }
 
+
+require('dotenv').config();
+
+const apiKey = process.env.API_KEY;
 const options = {
     method: 'GET',
     headers: {
         accept: 'application/json',
-        Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmNzNjMGRhMzUwN2EzZjE0MWY4ODU5YWIyZjA2MTYxMSIsIm5iZiI6MTczMTA5MjI3Ny4zNzA0MDk3LCJzdWIiOiI2NzE1M2Y5NTJiYmJhNjVmN2IxMTYzODYiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.NuBCOPamLvuJmc8jCTYlLA4mX2cFSHnaCvipurZNUDs'
+        Authorization: `Bearer ${apiKey}`
     }
 };
+
 
 function formatDate(data) {
     let ano = data.slice(0, 4);
